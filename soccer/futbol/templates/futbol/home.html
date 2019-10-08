@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block div1 %}
+    <h2>Bienvenido, elija el deporte que desea evaluar: </h2>
+    <br><br>
+    <div class="row">
+      <div class="col-sm">
+        <a href="/soccer/" class="btn btn-outline-primary btn-lg btn-block" role="button" aria-pressed="true"><strong>Futbol</strong></a>
+      </div>
+      <div class="col-sm">
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block"><strong>Basquet</strong></button>
+      </div>
+      <div class="col-sm">
+        <button type="button" class="btn btn-outline-primary btn-lg btn-block"><strong>Voley</strong></button>
+      </div>
+    </div>
+{% endblock %}

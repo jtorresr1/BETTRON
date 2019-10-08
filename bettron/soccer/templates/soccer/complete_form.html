@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block cuerpo %}
+    <form method="post" action="{% url 'futbol:match_all' %}">
+            {% csrf_token %}
+            {{ league_form.as_p }}
+            <p><input type="submit" value="Prediccion" id="Sending"></p>
+    </form>
+{% endblock %}

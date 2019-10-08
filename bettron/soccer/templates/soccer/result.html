@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+
+{% block cuerpo %}
+    <h2 class="text-center text-primary">{{local_team}} vs {{away_team}}</h2>
+    <br><br>
+    <div class="container">
+        <div class="table-responsive-sm">
+            <div class="p-3 mb-2 bg-light text-dark">
+                <p class="text-center text-danger font-weight-bold"> LOCAL </p>
+            </div>
+            <table class="table table-bordered text-center">
+                <thead class="table-info">
+                    <tr>
+                        {% for cantgol in goles %}
+                            <th scope="col"> {{cantgol}} </th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for gollocal in local%}
+                            <td>{{gollocal}}</td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br><br>
+        <div class="p-3 mb-2 bg-light text-dark">
+            <p class="text-center text-danger font-weight-bold"> VISITA </p>
+        </div>
+        <table class="table table-bordered text-center">
+            <thead class="table-info">
+                <tr>
+                    {% for cantgol in goles %}
+                        <th scope="col"> {{cantgol}} </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for golvisita in visita%}
+                        <td>{{golvisita}}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+
+        <br><br>
+        <div class="p-3 mb-2 bg-light text-dark">
+            <p class="text-center text-danger font-weight-bold"> Matriz posible resultado </p>
+        </div>
+        <table class="table table-bordered text-center">
+            <thead class="table-info">
+                <tr>
+                    <th scope="col"> GOLES </th>
+                    {% for cantgol in goles %}
+                        <th scope="col"> {{cantgol}} </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="table-info" >0</th>
+                    {% for posible in matrix0%}
+                        <td>{{posible}}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th scope="row" class="table-info">1</th>
+                    {% for posible in matrix1%}
+                        <td>{{posible}}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th scope="row" class="table-info">2</th>
+                    {% for posible in matrix2%}
+                        <td>{{posible}}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th scope="row" class="table-info">3</th>
+                    {% for posible in matrix3%}
+                        <td>{{posible}}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th scope="row" class="table-info">4</th>
+                    {% for posible in matrix4%}
+                        <td>{{posible}}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th scope="row" class="table-info">5</th>
+                    {% for posible in matrix5%}
+                        <td>{{posible}}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th scope="row" class="table-info">6</th>
+                    {% for posible in matrix6%}
+                        <td>{{posible}}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th scope="row" class="table-info">7</th>
+                    {% for posible in matrix7%}
+                        <td>{{posible}}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <div class="p-3 mb-2 bg-light text-dark">
+            <p class="text-center text-danger font-weight-bold"> Cantidad de goles </p>
+        </div>
+        <div class="p-3 mb-2 bg-info text-white text-center"><b>Mayor a </b></div>
+        <table class="table table-bordered text-center">
+            <thead class="table-info">
+                    <tr>
+                        {% for cantgol in goles1 %}
+                            <th scope="col"> {{cantgol}} </th>
+                        {% endfor %}
+                    </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for goles in masgoles%}
+                        <td>{{goles}}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+         <div class="p-3 mb-2 bg-info text-white text-center"><b>Menor a </b></div>
+        <table class="table table-bordered text-center">
+            <thead class="table-info">
+                <tr>
+                    {% for cantgol in goles2 %}
+                        <th scope="col"> {{cantgol}} </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for goles in menosgoles%}
+                        <td>{{goles}}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <div class="p-3 mb-2 bg-success text-white">
+            <b>La probabilidad de que ambos metan gol es {{aa}} y la probabilidad de que no metan ambos es {{naa}}</b>
+        </div>
+        <br><br>
+        <div class="table-responsive-sm">
+            <table class="table table-bordered text-center">
+                <thead class="table-info">
+                    <tr>
+                        <th class="col">LOCAL</th>
+                        <th class="col">EMPATE</th>
+                        <th class="col">VISITA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>{{localvictoria}}</th>
+                        <th>{{empate}}</th>
+                        <th>{{visitantevictoria}}</th>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock%}

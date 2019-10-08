@@ -1,0 +1,38 @@
+{% load static %}
+
+<header>
+    <div class="container-fluid">
+        <nav class="navbar navbar-dark bg-dark justify-content-center">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/header.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                <span>Bettron</span>
+            </a>
+
+        </nav>
+        <nav class="navbar navbar-dark bg-primary navbar-expand-lg justify-content-center">
+            <ul class="nav nav-pills nav-justified">
+              <li class="nav-item active">
+                <a class="nav-link text-light" href="{% url 'futbol:index'%}"><b>Inicio</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" id= "prediccion" href="{% url 'futbol:apuestas'%}"><b>Prediccion</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" id= "actualizar" href="#"><b>Actualizar</b></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <b>Agregar</b>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item disabled" href="{% url 'futbol:add_teams' %}">Equipos</a>
+                  <a class="dropdown-item disabled" href="{% url 'futbol:add_ligas' %}">Ligas</a>
+                  <a class="dropdown-item disabled" href="{% url 'futbol:add_matches' %}">Partidos</a>
+                </div>
+              </li>
+            </ul>
+
+            <button type="button" class="btn btn-outline-light" id="but_act">Activar</button>
+        </nav>
+    </div>
+</header>

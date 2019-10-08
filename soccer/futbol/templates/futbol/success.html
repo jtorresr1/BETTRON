@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block div1 %}
+    <p class="h2">Se ha subido el archivo: {{ uploaded_file_url }}</p>
+    <a href="{% url 'futbolmod:actualizar' %}"> Volver a subir otro archivo</a>
+{% endblock %}

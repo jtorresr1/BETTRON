@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+ {% block cuerpo %}
+    <span class="h2 text-danger"> Bienvenido usuario </span>
+    <br><br>
+    <p class="text-justify"> Esta es una pagina diseñada para el calculo probabilistico de goles en un partido.</p>
+    <br><br>
+    <span class="h6 text-secondary"> Proximamente para basquet, tennis, y otros deportes.</span>
+    <br><br>
+    <p class="text-center"> Para iniciar haga clic en el deporte que desee evaluar:</p>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-primary btn-lg btn-block" href="{% url 'futbol:apuestas'%}">
+                Futbol
+            </a>
+        </div>
+        <div class="col">
+            <a class="btn btn-primary btn-lg btn-block" href="#">
+                Basquet
+            </a>
+        </div>
+
+
+    </div>
+    <br><br>
+    <a class="btn btn-primary btn-lg btn-block disabled" href="{% url 'futbol:actualizar_matches'%}">
+        ActualizarLiga
+    </a>
+    <br><br>
+    <a class="btn btn-primary btn-lg btn-block" href="{% url 'futbol:download_pdfs'%}" id="down_pdfs">
+        Descargar pdfs
+    </a>
+    <br><br>
+    <a class="btn btn-primary btn-lg btn-block" href="{% url 'futbol:general'%}" id="tomorrow">
+        Tomorrow
+    </a>
+
+ {% endblock %}

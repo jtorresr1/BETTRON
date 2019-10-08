@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block cuerpo %}
+    <form method="post" action="{% url 'futbol:match_all' %}">
+            {% csrf_token %}
+            {{ league_form.as_p }}
+            <p><input type="submit" value="Prediccion"></p>
+    </form>
+{% endblock %}
+
+
+{% block scripts %}
+     <script language="javascript">
+        league_1 = {{ league_form.ligas | safe}}
+        $("#id_Liga").empty();
+        $("#id_Liga").append('<option value="" disabled selected>Seleccione la liga</option>');
+        $("#id_Nacion").append('<option value="" disabled selected>Seleccione la nacion</option>');
+        $('#id_Nacion').change(function() {popNac(this)});
+
+        function popNac(event) {
+            $("#id_Liga").empty();
+            $("#id_Liga").append('<option value="" disabled selected>Seleccione la liga</option>');
+            pais = $("#id_Nacion option:selected").text();
+            for (let [b, bcars] of Object.entries(league_1)) {
+                if (b == pais) {
+                    for (car in bcars) {
+                        $('#id_Liga')
+                            .append($("<option></option>")
+                                .attr("value", bcars[car])
+                                .text(bcars[car]));
+                    }
+                }
+            }
+        }
+    </script>
+
+{% endblock%}

@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<title>Bettron</title>
+	{% block link %}
+
+	{% endblock %}
+
+
+</head>
+<body>
+	<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-primary nav-pills flex-column flex-sm-row">
+		  		<a class="navbar-brand" href="/">Bettron</a>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				    <ul class="navbar-nav mr-auto">
+				      <li class="nav-item active">
+				        <a class="flex-sm-fill text-sm-center nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+				      </li>
+				      <li class="nav-item dropdown active">
+				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				          Deportes
+				        </a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				          <a class="dropdown-item" href="/soccer/">Futbol</a>
+				          <a class="dropdown-item" href="#">Basquet</a>
+				          <a class="dropdown-item" href="#">Voley</a>
+				        </div>
+				      </li>
+				      <li class="nav-item active">
+				        <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'futbolmod:actualizar' %}">ActualizarLiga <span class="sr-only">(current)</span></a>
+				      </li>
+							<li class="nav-item active">
+				        <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'futbolmod:add_equipo' %}">AgregarEquipo <span class="sr-only">(current)</span></a>
+				      </li>
+							<li class="nav-item active">
+				        <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'futbolmod:add_liga' %}">AgregarLiga <span class="sr-only">(current)</span></a>
+				      </li>
+				    </ul>
+				    <form class="form-inline my-2 my-lg-0">
+				      <input class="form-control mr-sm-2" type="search" placeholder="Liga" aria-label="Search">
+				      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+				    </form>
+				  </div>
+			 	{% block nav %}
+
+				{% endblock %}
+			</nav>
+
+	</header>
+	<br><br>
+	<div class="container">
+		{% block div1 %}
+
+		{% endblock %}
+	</div>
+
+	<br><br>
+	<footer>
+	<div class="footer">
+		<div class="container">
+			<div class="row" id="final-footer">
+	        <div class="col-sm-12 text-center">
+	        	© Copyright 2019<br> Bettron.com
+	        </div>
+	      </div>
+
+		</div>
+	</div>
+</footer>>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	{% block scripts %}
+
+	{% endblock%}
+</body>
+</html>

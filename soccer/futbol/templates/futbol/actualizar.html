@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block div1 %}
+  <form method="post" enctype="multipart/form-data" action="{% url 'futbolmod:upload' %}">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Liga:</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option>One</option>
+        <option>Two</option>
+        <option>Three</option>
+        <option>Four</option>
+      </select>
+    </div>
+    <div class="input-group">
+        <input type="file" name="myfile" accept=".csv" required>
+        <button class="btn btn-danger" type="submit">Actualizar </button>
+    </div>
+  </form>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock%}
